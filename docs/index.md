@@ -15,3 +15,15 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
     docs/
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
+
+I proven write code using :fontawesome-brands-golang: and :simple-python:
+
+```go title="say_hello" linenums="1" hl_lines="5-7"
+func hello() string {
+    return "Hello"
+}
+
+func calculate(a int, b int) int {
+    return a * b
+}
+```
