@@ -1,5 +1,12 @@
 site_name: Agentic AI Research Development
 site_url: "https://kokolopo.site"
+nav:
+  - Introductions:
+     - introductions/index.md
+     - introductions/ai-agent.md
+     - LLMs:
+       - introductions/llms/llm.md
+       - introductions/llms/provider.md
 theme:
   name: material
   font:
@@ -9,6 +16,8 @@ theme:
   favicon: assets/rcs-logo.png
   features:
     - navigation.footer
+    - navigation.tabs
+    - navigation.tabs.sticky
   palette:
     # Dark Mode
     - scheme: slate
@@ -48,6 +57,9 @@ markdown_extensions:
       alternate_style: true
   - admonition
   - pymdownx.details
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
 
 extra:
   social:

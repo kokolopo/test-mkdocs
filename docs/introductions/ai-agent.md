@@ -6,7 +6,7 @@ AI Agent merupakan entitas AI (program/sistem) yang melakukan tugas tertentu sec
 ---
 
 ## **Components of AI Agent**
-![Image title](assets/agent-components.png)
+![Image title](../assets/agent-components.png)
 
 Gambar diatas merupakan komponen-komponen utama pembangun sebuah *AI Agent*:
 
@@ -28,7 +28,7 @@ Berikut fungsi dan pentingnya masing-masing komponen:
 
 ---
 
-### Bagaimana Komponen-Komponen Ini Berinteraksi
+### Bagaimana Komponen-Komponen Berinteraksi
 
 Secara garis besar, alur sistem kerja agent kira-kira sebagai berikut:
 
@@ -40,7 +40,7 @@ Secara garis besar, alur sistem kerja agent kira-kira sebagai berikut:
 
 ---
 
-### Kenapa Komponen-Komponen Itu Penting
+### Kenapa Komponen-Komponen Tersebut Penting
 
 * Tanpa memory, agent jadi “stateless” → tidak punya kapasitas untuk mempertahankan konteks antar interaksi, pengalaman, atau preferensi pengguna. ([Intelligence Strategy][3])
 * Tanpa tools / fungsi eksternal, kemampuan aksi agent terbatas hanya pada generasi teks/ide, tidak bisa melakukan tindakan nyata di dunia luar. ([livechatai.com][1])
