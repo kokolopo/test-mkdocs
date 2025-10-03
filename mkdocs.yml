@@ -7,6 +7,19 @@ nav:
      - LLMs:
        - introductions/llms/llm.md
        - introductions/llms/provider.md
+  - OWASP:
+     - owasp/index.md
+     - owasp/prompt-injection.md
+     - owasp/sensitive-information-disclosure.md
+     - owasp/supply-chain-risks.md
+     - owasp/data-model-poisoning.md
+     - owasp/improper-output-handling.md
+     - owasp/excessive-agency.md
+     - owasp/system-prompt-leakage.md
+     - owasp/vector-embedding-weaknesses.md
+     - owasp/misinformation.md
+     - owasp/unbounded-consumption.md
+  
 theme:
   name: material
   font:
