@@ -7,6 +7,9 @@ nav:
      - LLMs:
        - introductions/llms/llm.md
        - introductions/llms/provider.md
+  - Tech Stack:
+     - tech-stack/overview.md
+     - tech-stack/index.md
   - OWASP:
      - owasp/index.md
      - owasp/prompt-injection.md
