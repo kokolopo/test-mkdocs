@@ -58,7 +58,7 @@ Untuk *monitoring, tracing, debugging, dan evaluasi performa agent.*
 
 | Layer                   | Fungsi                                   | Tools / Framework                              | Catatan                                          |
 | ----------------------- | ---------------------------------------- | ---------------------------------------------- | ------------------------------------------------ |
-| **Tracing & Debugging** | Melihat langkah reasoning, panggilan API | LangSmith, OpenDevin, Phoenix, Helicone        | Penting untuk evaluasi & audit reasoning.        |
+| **Tracing & Debugging** | Melihat langkah reasoning, panggilan API | LangSmith, LangWatch, Helicone        | Penting untuk evaluasi & audit reasoning.        |
 | **Logging & Metrics**   | Menyimpan log agent & metrik performa    | Prometheus + Grafana, ELK Stack, OpenTelemetry | Wajib untuk produksi besar agar tahu bottleneck. |
 | **Eval Framework**      | Mengukur kualitas jawaban agent          | LangSmith eval, DeepEval, Ragas, OpenAI Evals  | Evaluasi otomatis terhadap respons agent.        |
 
