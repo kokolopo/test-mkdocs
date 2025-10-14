@@ -10,6 +10,8 @@ nav:
   - Tech Stack:
      - tech-stack/overview.md
      - tech-stack/index.md
+     - tech-stack/dev-requirement.md
+     - tech-stack/cost-simulation.md
   - OWASP:
      - owasp/index.md
      - owasp/prompt-injection.md
