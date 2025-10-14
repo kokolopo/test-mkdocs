@@ -12,6 +12,7 @@ nav:
      - tech-stack/index.md
      - tech-stack/dev-requirement.md
      - tech-stack/cost-simulation.md
+     - tech-stack/commercial-b2b.md
   - OWASP:
      - owasp/index.md
      - owasp/prompt-injection.md
