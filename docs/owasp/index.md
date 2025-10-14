@@ -1,5 +1,7 @@
 # **LLMs OWASP Introduction**
 
+![Image title](../assets/owasp-llm.png)
+
 ---
 
 ## **Apa itu OWASP?**
