@@ -71,8 +71,4 @@ Untuk kelengkapan server (menggunakan konfigurasi **RTX 4090** sebagai basis):
 | **PSU (Power Supply)** | 1000W 80+ Platinum/Titanium (Wajib berkualitas tinggi) | Rp 3.000.000 - Rp 5.000.000 |
 | **Casing & Cooling** | Server/PC Case dengan *airflow* baik + *Liquid/Air Cooler* | Rp 2.000.000 - Rp 4.000.000 |
 
-### **Total Perkiraan Biaya Server Kinerja Tinggi:**
-
-> **Diperkirakan mulai dari Rp 45.000.000 - Rp 65.000.000+** (Tergantung pada merek, model spesifik, dan harga GPU).
-
 ---
