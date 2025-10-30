@@ -25,6 +25,8 @@ nav:
      - owasp/vector-embedding-weaknesses.md
      - owasp/misinformation.md
      - owasp/unbounded-consumption.md
+  - LLM Self Hosting:
+     - llm-self-hosting/index.md
   
 theme:
   name: material
