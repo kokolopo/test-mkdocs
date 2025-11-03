@@ -1,0 +1,1539 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kokolopo.site/llm-self-hosting/installation-on-premise/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+      
+      <link rel="icon" href="../../assets/rcs-logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>Instalasi LLaMA 3 On-Premise di Linux - Agentic AI Research Development</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRed+Hat+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"Red Hat Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#instalasi-llama-3-on-premise-di-linux" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Agentic AI Research Development" class="md-header__button md-logo" aria-label="Agentic AI Research Development" data-md-component="logo">
+      
+  <img src="../../assets/rcs-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Agentic AI Research Development
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Instalasi LLaMA 3 On-Premise di Linux
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-purple"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../introductions/" class="md-tabs__link">
+          
+  
+  
+  Introductions
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../tech-stack/overview/" class="md-tabs__link">
+          
+  
+  
+  Tech Stack
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../owasp/" class="md-tabs__link">
+          
+  
+  
+  OWASP
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  LLM Self Hosting
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Agentic AI Research Development" class="md-nav__button md-logo" aria-label="Agentic AI Research Development" data-md-component="logo">
+      
+  <img src="../../assets/rcs-logo.png" alt="logo">
+
+    </a>
+    Agentic AI Research Development
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Introductions
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Introductions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introductions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction of Agentic AI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introductions/ai-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    What is AI Agent?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LLMs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            LLMs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introductions/llms/llm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Large Language Models (LLMs)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introductions/llms/provider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Penyedia Large Language Models (LLMs) &amp; Platform Agregator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tech Stack
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tech Stack
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tech-stack/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tech-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Framework
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tech-stack/dev-requirement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Development Requirement
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tech-stack/cost-simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Simulasi Biaya
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tech-stack/commercial-b2b/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Commercial B2B License
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    OWASP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            OWASP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../owasp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LLMs OWASP Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../owasp/prompt-injection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prompt Injection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../owasp/sensitive-information-disclosure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sensitive Information Disclosure
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../owasp/supply-chain-risks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Supply Chain Risks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../owasp/data-model-poisoning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data &amp; Model Poisoning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../owasp/improper-output-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Improper Output Handling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../owasp/excessive-agency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Excessive Agency
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../owasp/system-prompt-leakage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    System Prompt Leakage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../owasp/vector-embedding-weaknesses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vector &amp; Embedding Weaknesses
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../owasp/misinformation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Misinformation (Halusinasi &amp; Disinformasi)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../owasp/unbounded-consumption/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unbounded Consumption
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    LLM Self Hosting
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            LLM Self Hosting
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Spesifikasi Teknologi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Instalasi LLaMA 3 On-Premise di Linux
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Instalasi LLaMA 3 On-Premise di Linux
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-persiapan-sistem-dan-dependensi" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Persiapan Sistem dan Dependensi
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-unduh-dan-siapkan-model-llama-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Unduh dan Siapkan Model LLaMA 3
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-framework-inferensi-llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Framework Inferensi LLM
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-menyiapkan-server-rest-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Menyiapkan Server REST API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-mengekspos-api-ke-publik" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Mengekspos API ke Publik
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-keamanan-dasar" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Keamanan Dasar
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-persiapan-sistem-dan-dependensi" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Persiapan Sistem dan Dependensi
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-unduh-dan-siapkan-model-llama-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Unduh dan Siapkan Model LLaMA 3
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-framework-inferensi-llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Framework Inferensi LLM
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-menyiapkan-server-rest-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Menyiapkan Server REST API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-mengekspos-api-ke-publik" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Mengekspos API ke Publik
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-keamanan-dasar" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Keamanan Dasar
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="instalasi-llama-3-on-premise-di-linux">Instalasi LLaMA 3 On-Premise di Linux</h1>
+<p>Dokumentasi ini menjelaskan langkah-langkah teknis untuk menginstal dan menjalankan model LLaMA 3 secara lokal di Linux, serta mengekspose API publik-nya. Penjelasan mencakup instalasi dependensi, pengunduhan model, setup inferensi, hingga penyiapan server REST API dengan keamanan dasar.</p>
+<h2 id="1-persiapan-sistem-dan-dependensi">1. Persiapan Sistem dan Dependensi</h2>
+<ul>
+<li>
+<p><strong>Python dan VirtualEnv:</strong> Pastikan Python terbaru (≥3.9) terpasang, karena Transformers memerlukan Python 3.9 ke atas<a href="https://huggingface.co/docs/transformers/en/installation#:~:text=Transformers%20works%20with%20PyTorch,2">[1]</a>. Buat lingkungan virtual untuk proyek agar dependensi terisolasi. Contoh perintah:
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.env<span class="w">  </span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">source</span><span class="w"> </span>.env/bin/activate
+</span></code></pre></div>
+   (Perintah ini setara dengan contoh di dokumentasi Hugging Face<a href="https://huggingface.co/docs/transformers/en/installation#:~:text=Create%20a%20virtual%20environment%20to,install%20Transformers%20in">[2]</a>.) Setelah aktif, pasang paket utama:
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pip<span class="w"> </span>install<span class="w"> </span>transformers<span class="w"> </span>torch
+</span></code></pre></div>
+   Ini juga menginstal PyTorch (CPU) dan Hugging Face Transformers. Jika hanya CPU, bisa menggunakan indeks khusus PyTorch CPU; jika pakai GPU, pasang PyTorch GPU biasa.</p>
+</li>
+<li>
+<p><strong>CUDA/cuDNN (jika GPU):</strong> Jika menggunakan GPU NVIDIA, pasang driver NVIDIA dan CUDA Toolkit yang sesuai untuk versi PyTorch <a href="https://huggingface.co/docs/transformers/en/installation#:~:text=For%20GPU%20acceleration%2C%20install%20the,appropriate%20CUDA%20drivers%20for%20PyTorch">[3]</a>. Periksa deteksi GPU dengan <code>nvidia-smi</code>. Jika <code>nvidia-smi</code> tidak terdeteksi atau tidak ada GPU, gunakan PyTorch CPU-only. Setelah CUDA terinstal, <code>pip pip install torch</code> (versi CUDA) sudah mencakup cuDNN secara otomatis.</p>
+</li>
+<li>
+<p><strong>Dependensi Tambahan:</strong> Jika menggunakan TGI (Text Generation Inference), instal Rust dan protokol Protobuf sesuai petunjuk TGI<a href="https://huggingface.co/docs/text-generation-inference/en/installation#:~:text=To%20install%20and%20launch%20locally%2C,using%20conda">[4]</a><a href="https://huggingface.co/docs/text-generation-inference/en/installation#:~:text=PROTOC_ZIP%3Dprotoc,f%20%24PROTOC_ZIP">[5]</a>. Contoh:
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pip<span class="w"> </span>install<span class="w"> </span>text-generation-inference
+</span></code></pre></div></p>
+</li>
+<li>TGI membutuhkan Python 3.9+ dan Rust; dokumentasi resmi mencontohkan instalasi melalui <code>git clone</code> dan <code>make install</code><a href="https://huggingface.co/docs/text-generation-inference/en/installation#:~:text=To%20install%20and%20launch%20locally%2C,using%20conda">[4]</a>.</li>
+</ul>
+<h2 id="2-unduh-dan-siapkan-model-llama-3">2. Unduh dan Siapkan Model LLaMA 3</h2>
+<ul>
+<li><strong>Via Meta (download.sh):</strong> Kunjungi situs resmi LLaMA 3 (llama.meta.com), setujui perjanjian lisensi, lalu jalankan skrip pengunduhan. Proses ini akan mengunduh berkas model dan tokenizer ke direktori lokal<a href="https://github.com/meta-llama/llama3#:~:text=To%20download%20the%20model%20weights,website%20and%20accept%20our%20License">[6]</a>. (Perhatikan link yang dikirim lewat email perlu dimasukkan saat diminta.)</li>
+<li><strong>Via Hugging Face:</strong> Model LLaMA 3 juga ada di Hugging Face (contoh: <code>meta-llama/Meta-Llama-3-8B-Instruct</code>). Setelah request akses disetujui, Anda dapat mengunduh model tersebut. Misalnya, menggunakan CLI Hugging Face:
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>huggingface-cli<span class="w"> </span>login<span class="w">  </span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>huggingface-cli<span class="w"> </span>download<span class="w"> </span>meta-llama/Meta-Llama-3-8B-Instruct<span class="w"> </span><span class="se">\ </span><span class="w"> </span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>--include<span class="w"> </span><span class="s2">&quot;original/*&quot;</span><span class="w"> </span>--local-dir<span class="w"> </span>Llama3-8B-Instruct
+</span></code></pre></div>
+    atau langsung menggunakan Transformers dalam kode Python:
+    <div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">pipeline</span><span class="p">,</span> <span class="n">torch</span>\<span class="n">_dtype</span>  
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">model_id</span> <span class="o">=</span> <span class="s2">&quot;meta-llama/Meta-Llama-3-8B-Instruct&quot;</span>  
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">pipeline</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span>  
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="s2">&quot;text-generation&quot;</span><span class="p">,</span>  
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="n">model</span><span class="o">=</span><span class="n">model_id</span><span class="p">,</span>  
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="n">model_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;torch_dtype&quot;</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">bfloat16</span><span class="p">},</span>  
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="n">device_map</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span>  
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="p">)</span>
+</span></code></pre></div>
+    Contoh ini diadaptasi dari dokumentasi Meta Hugging Face<a href="https://github.com/meta-llama/llama3#:~:text=,download%20and%20cache%20the%20weights">[7]</a>. Setelah diunduh (atau saat diakses pertama kali), model akan tersimpan di cache <code>~/.cache/huggingface</code> atau direktori yang ditentukan.</li>
+<li><strong>Format Model:</strong> Pastikan model dalam format yang sesuai (misal file .pt, .bin, atau .safetensors dari Transformers; atau .gguf jika pakai llama.cpp). Jika perlu, konversi bisa dilakukan dengan skrip <code>convert_llama_ggml_to_gguf.py</code> dari repositori llama.cpp.</li>
+</ul>
+<h2 id="3-framework-inferensi-llm">3. Framework Inferensi LLM</h2>
+<p>Setelah model siap, gunakan framework inferensi untuk menjalankannya. Beberapa pilihan populer:</p>
+<ul>
+<li><strong>Hugging Face Transformers (PyTorch):</strong> Pakai Transformers dengan pipeline atau model/tokenizer. Contoh:
+    <div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">pipeline</span>  
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">pipe</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="s2">&quot;text-generation&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;meta-llama/Meta-Llama-3-8B-Instruct&quot;</span><span class="p">)</span>  
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">output</span> <span class="o">=</span> <span class="n">pipe</span><span class="p">(</span><span class="s2">&quot;Halo, bagaimana kabarmu?&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+    Ini menggunakan Llama 3 instruksi untuk teks generatif. Sama seperti contoh dokumentasi HF<a href="https://github.com/meta-llama/llama3#:~:text=,download%20and%20cache%20the%20weights">[7]</a>, pastikan <code>device_map="auto"</code> agar model besar terdistribusi ke GPU jika tersedia.</li>
+<li><strong>Text Generation Inference (TGI):</strong> TGI adalah toolkit Hugging Face untuk inference berperforma tinggi dengan REST API siap pakai<a href="https://huggingface.co/docs/text-generation-inference/en/index#:~:text=Text%20Generation%20Inference%20,NeoX%2C%20and%20T5">[8]</a>. Setelah instalasi (<code>pip install text-generation-inference</code>), jalankan server TGI dengan model Llama 3 instruksi:
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>text-generation-launch<span class="w"> </span>--model-id<span class="w"> </span>meta-llama/Meta-Llama-3-8B-Instruct<span class="w"> </span>--tensor-parallel<span class="w"> </span><span class="m">1</span><span class="w"> </span>--listen-port<span class="w"> </span><span class="m">8000</span>
+</span></code></pre></div>
+    (Contoh ini mengikuti pola CLI TGI; dokumentasi resmi memberikan contoh serupa<a href="https://huggingface.co/docs/text-generation-inference/en/installation#:~:text=Once%20installation%20is%20done%2C%20simply,run">[9]</a>.) TGI mendukung optimasi produksi, batching, quantisasi, dan menyediakan metrik Prometheus bawaan<a href="https://huggingface.co/docs/text-generation-inference/en/index#:~:text=,inference%20using%20%2051%20Flash">[10]</a>.</li>
+<li><strong>llama.cpp / llama-cpp-python:</strong> Untuk CPU (atau GPU terbatas), <strong>llama.cpp</strong> (C/C++ inference) mendukung LLaMA 3<a href="https://github.com/ggml-org/llama.cpp#:~:text=%23%20Text">[11]</a>. Anda bisa menginstal binding Python-nya:
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>pip<span class="w"> </span>install<span class="w"> </span>llama-cpp-python<span class="o">[</span>server<span class="o">]</span>
+</span></code></pre></div>
+    Kemudian jalankan server API kompatibel OpenAI:
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>python3<span class="w"> </span>-m<span class="w"> </span>llama_cpp.server<span class="w"> </span>--model<span class="w"> </span>path/to/model.gguf
+</span></code></pre></div>
+    Contoh ini diambil dari dokumentasi llama-cpp-python yang menunjukkan instalasi dan perintah server<a href="https://llama-cpp-python.readthedocs.io/en/latest/server/#:~:text=The%20server%20can%20be%20installed,by%20running%20the%20following%20command">[12]</a>. Setelah dijalankan, server akan expose endpoint mirip OpenAI (mis. /v1/completions).</li>
+<li><strong>Alternatif Lain:</strong> Misal menggunakan Docker image atau layanan lain; utamakan framework yang sesuai kebutuhan. IntelliSense LLaMA-3 dapat dipanggil lewat pip llama-server atau tugas TorchRun dari repositori Llama 3 Meta, tapi di sini fokus pada opsi di atas.</li>
+</ul>
+<h2 id="4-menyiapkan-server-rest-api">4. Menyiapkan Server REST API</h2>
+<p>Setelah model dan inferensi siap, buat service REST API untuk interaksi. Pendekatan umum:</p>
+<ul>
+<li><strong>FastAPI + Transformers:</strong> Instal FastAPI dan server ASGI (uvicorn):
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>pip<span class="w"> </span>install<span class="w"> </span>fastapi<span class="w"> </span>uvicorn
+</span></code></pre></div>
+    Buat aplikasi (misal <code>app.py</code>):
+    <div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fastapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">FastAPI</span>  
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">pipeline</span>  
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>  
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="n">generator</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="s2">&quot;text-generation&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;meta-llama/Meta-Llama-3-8B-Instruct&quot;</span><span class="p">,</span> <span class="n">torch</span>\<span class="n">_dtype</span><span class="o">=</span><span class="s2">&quot;bfloat16&quot;</span><span class="p">,</span> <span class="n">device</span>\<span class="n">_map</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">)</span>  
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="nd">@app</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;/generate&quot;</span><span class="p">)</span>  
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="k">def</span><span class="w"> </span><span class="nf">generate</span><span class="p">(</span><span class="n">prompt</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>  
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="n">result</span> <span class="o">=</span> <span class="n">generator</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>  
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="k">return</span> <span class="p">{</span><span class="s2">&quot;generated_text&quot;</span><span class="p">:</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;generated_text&quot;</span><span class="p">]}</span>
+</span></code></pre></div></li>
+<li>Kode di atas menggunakan pipeline LLaMA 3 instruksi sebagai model (diambil dari dokumentasi HF<a href="https://github.com/meta-llama/llama3#:~:text=,download%20and%20cache%20the%20weights">[7]</a>). Jalankan server FastAPI dengan uvicorn:
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>uvicorn<span class="w"> </span>app:app<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">8000</span>
+</span></code></pre></div></li>
+<li><strong>TGI REST Endpoint:</strong> Jika menggunakan TGI, Anda tidak perlu FastAPI terpisah. Cukup jalankan <code>text-generation-launch</code> seperti di atas, dan TGI secara otomatis menyediakan endpoint REST (JSON over HTTP) di port yang ditentukan. Klien dapat mengakses misal <code>http://localhost:8000/completions</code> (bergantung konfigurasi TGI). Dokumentasi TGI merekomendasikan Docker atau binary siap pakai untuk deployment produksi.</li>
+<li><strong>llama-cpp-server:</strong> Perintah <code>python3 -m llama_cpp.server</code> seperti disebut di atas akan membuka HTTP server. Endpoint bawaannya kompatibel OpenAI API. Contoh saat dijalankan, Anda bisa <code>POST</code> ke <code>http://localhost:5000/v1/engines/llama_cpp/completions</code> (port default 5000) dengan payload JSON untuk mendapatkan hasil teks. Skrip <code>llama-cpp-python</code> menyediakan banyak opsi (lihat dokumentasi server-nya).</li>
+</ul>
+<p>Setelah server berjalan, lakukan tes dengan <code>curl</code> atau klien HTTP. Misal:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="w">    </span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8000/generate<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;prompt&quot;: &quot;Apa kabar?&quot;}&#39;</span>
+</span></code></pre></div></p>
+<p>Jika menggunakan FastAPI di atas, hasilnya akan berisi teks generatif.</p>
+<h2 id="5-mengekspos-api-ke-publik">5. Mengekspos API ke Publik</h2>
+<p>Agar API dapat diakses dari luar jaringan lokal, lakukan salah satu cara berikut:</p>
+<ul>
+<li><strong>Reverse Proxy dengan NGINX:</strong> Pasang NGINX di server publik Anda. Buat konfigurasi virtual host yang mem-forward ke aplikasi. Contoh <code>/etc/nginx/sites-available/llama3</code>:
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>server<span class="w"> </span><span class="o">{</span><span class="w">  </span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span>listen<span class="w"> </span><span class="m">80</span><span class="p">;</span><span class="w">  </span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span>server_name<span class="w"> </span>api.llama3.example.com<span class="p">;</span><span class="w">  </span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">    </span>location<span class="w"> </span>/<span class="w"> </span><span class="o">{</span><span class="w">  </span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">        </span>proxy_pass<span class="w"> </span>http://127.0.0.1:8000<span class="p">;</span><span class="w">  </span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">        </span>proxy_set_header<span class="w"> </span>Host<span class="w"> </span><span class="nv">$host</span><span class="p">;</span><span class="w">  </span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">        </span>proxy_set_header<span class="w"> </span>X-Real-IP<span class="w"> </span><span class="nv">$remote_addr</span><span class="p">;</span><span class="w">  </span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">        </span>proxy_set_header<span class="w"> </span>X-Forwarded-For<span class="w"> </span><span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span><span class="w">  </span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">        </span>proxy_set_header<span class="w"> </span>X-Forwarded-Proto<span class="w"> </span><span class="nv">$scheme</span><span class="p">;</span><span class="w">  </span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">    </span><span class="o">}</span><span class="w">  </span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="o">}</span>
+</span></code></pre></div>
+    Contoh di atas mengarahkan <code>api.llama3.example.com</code> ke FastAPI/uvicorn di port 8000 pada localhost<a href="https://dev.to/udara_dananjaya/setting-up-a-fastapi-project-with-nginx-reverse-proxy-on-ubuntu-883#:~:text=server%20,your_domain_or_ip">[13]</a>. Aktifkan konfigurasi ini (<code>ln -s</code> ke <code>sites-enabled</code>), lalu reload NGINX:
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>sudo<span class="w"> </span>nginx<span class="w"> </span>-t<span class="w">  </span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>reload<span class="w"> </span>nginx
+</span></code></pre></div>
+    Setelah itu, domain Anda akan melayani API. Untuk keamanan, gunakan HTTPS – misalnya dengan Certbot/Let’s Encrypt:
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>certbot<span class="w"> </span>python3-certbot-nginx<span class="w">  </span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>sudo<span class="w"> </span>certbot<span class="w"> </span>--nginx<span class="w"> </span>-d<span class="w"> </span>api.llama3.example.com
+</span></code></pre></div>
+    Certbot akan mengonfigurasi SSL secara otomatis<a href="https://dev.to/udara_dananjaya/setting-up-a-fastapi-project-with-nginx-reverse-proxy-on-ubuntu-883#:~:text=sudo%20apt%20install%20certbot%20python3">[14]</a>. NGINX juga dapat diaplikasikan limit koneksi atau fitur WAF jika diperlukan.</li>
+<li><strong>Tunneling (ngrok, Cloudflare Tunnel):</strong> Jika tidak ada server publik, gunakan tunnel. Contoh ngrok: jalankan
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>ngrok<span class="w"> </span>http<span class="w"> </span><span class="m">8000</span>
+</span></code></pre></div>
+    yang akan memberikan URL publik (http/https) yang meneruskan ke localhost:8000<a href="https://www.alexhyett.com/using-ngrok-to-test-local-sites-api/#:~:text=1,see%20an%20output%20like%20this">[15]</a>. Atau gunakan <em>Cloudflare Tunnel</em> (<code>cloudflared</code>): buat tunnel dan peta ke hostname pilihan, misal:
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>cloudflared<span class="w"> </span>tunnel<span class="w"> </span>--hostname<span class="w"> </span>llama3.example.com<span class="w"> </span>--url<span class="w"> </span>http://localhost:8000
+</span></code></pre></div>
+    Cloudflare akan meneruskan <code>llama3.example.com</code> ke server lokal tanpa membuka port secara langsung<a href="https://sebastiangogola.me/securely-exposing-a-local-nginx-server-with-cloudflare-tunnel/#:~:text=%E2%9C%94%20No%20exposed%20IPs%20or,monitoring%20available%20via%20Cloudflare%20Dashboard">[16]</a>. Keuntungan metode ini: IP dan port server Anda tidak terekspos langsung, dan Cloudflare otomatis menangani sertifikat HTTPS serta proteksi DDoS<a href="https://sebastiangogola.me/securely-exposing-a-local-nginx-server-with-cloudflare-tunnel/#:~:text=%E2%9C%94%20No%20exposed%20IPs%20or,monitoring%20available%20via%20Cloudflare%20Dashboard">[16]</a>.</li>
+<li><strong>DNS &amp; Firewall:</strong> Pastikan port yang digunakan (80/443) diizinkan lewat firewall/VPS. Jika menggunakan domain khusus, atur A-record ke IP server.</li>
+</ul>
+<h2 id="6-keamanan-dasar">6. Keamanan Dasar</h2>
+<ul>
+<li><strong>Rate Limiting:</strong> Batasi laju request agar API tidak disalahgunakan atau overload. Jika menggunakan NGINX, aktifkan rate limit. Contoh konfigurasi NGINX:
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>http<span class="w"> </span><span class="o">{</span><span class="w">  </span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">    </span>limit_req_zone<span class="w"> </span><span class="nv">$binary_remote_addr</span><span class="w"> </span><span class="nv">zone</span><span class="o">=</span>mylimit:10m<span class="w"> </span><span class="nv">rate</span><span class="o">=</span>10r/s<span class="p">;</span><span class="w">  </span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span>...<span class="w">  </span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">    </span>server<span class="w"> </span><span class="o">{</span><span class="w">  </span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">    </span>...<span class="w">  </span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">        </span>location<span class="w"> </span>/<span class="w"> </span><span class="o">{</span><span class="w">  </span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">            </span>limit_req<span class="w"> </span><span class="nv">zone</span><span class="o">=</span>mylimit<span class="w"> </span><span class="nv">burst</span><span class="o">=</span><span class="m">20</span><span class="w"> </span>nodelay<span class="p">;</span><span class="w">  </span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">            </span>proxy_pass<span class="w"> </span>http://127.0.0.1:8000<span class="p">;</span><span class="w">  </span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">        </span><span class="o">}</span><span class="w">  </span>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">    </span><span class="o">}</span><span class="w">  </span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="o">}</span>
+</span></code></pre></div>
+    Potongan di atas memastikan tiap IP maksimal ~10 request per detik<a href="https://blog.nginx.org/blog/rate-limiting-nginx#:~:text=limit_req_zone%20%24binary_remote_addr%20zone%3Dmylimit%3A10m%20rate%3D10r%2Fs%3B">[17]</a>, dengan kemampuan menampung burst (antrian) agar tidak langsung menolak serangan spasi singkat<a href="https://blog.nginx.org/blog/rate-limiting-nginx#:~:text=location%20%2Flogin%2F%20,burst%3D20">[18]</a>. Bila memakai server Python (FastAPI), Anda juga bisa gunakan library seperti <code>slowapi</code> atau limit di layer kode.</li>
+<li><strong>Autentikasi API Key:</strong> Lindungi endpoint publik dengan mekanisme kunci API atau token. Misalnya di FastAPI gunakan <code>APIKeyHeader</code> untuk mengecek header khusus, seperti contoh dokumentasi FastAPI:
+    <div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fastapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">Depends</span><span class="p">,</span> <span class="n">FastAPI</span>  
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fastapi.security</span><span class="w"> </span><span class="kn">import</span> <span class="n">APIKeyHeader</span>  
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="n">api_key_scheme</span> <span class="o">=</span> <span class="n">APIKeyHeader</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;X-API-Key&quot;</span><span class="p">)</span>  
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/secure-data/&quot;</span><span class="p">)</span>  
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">read_secure</span><span class="p">(</span><span class="n">key</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">api_key_scheme</span><span class="p">)):</span>  
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="k">return</span> <span class="p">{</span><span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;OK&quot;</span><span class="p">}</span>
+</span></code></pre></div>
+    FastAPI akan menolak jika header <code>X-API-Key</code> tidak benar<a href="https://fastapi.tiangolo.com/reference/security/#:~:text=header_scheme%20%3D%20APIKeyHeader%28name%3D%22x">[19]</a>. Anda dapat memeriksa nilai kunci tersebut dengan logika tersendiri (misal mencocokkan dengan string yang disimpan di server). Alternatifnya, Anda bisa menerapkan validasi di layer NGINX (mis. memeriksa header/parameter kunci API) atau menggunakan OAuth 2.0/Bearer token untuk proteksi lebih lanjut.</li>
+<li><strong>Pemantauan dan Logging:</strong> Aktifkan logging dan pantau performa. Gunakan sistem monitoring seperti Prometheus + Grafana untuk metrik. Jika pakai TGI, sudah terdapat dukungan metrik Prometheus dan tracing out-of-the-box<a href="https://huggingface.co/docs/text-generation-inference/en/index#:~:text=,inference%20using%20%2051%20Flash">[10]</a>. Anda juga bisa menggunakan APM atau tools observabilitas (contoh: Sentry, OpenTelemetry) agar mengetahui error atau bottleneck. Pantau penggunaan GPU (mis. <code>nvidia-smi</code> atau <code>dcgm-exporter</code>), konsumsi RAM, dan statistik request (melalui NGINX access log atau FastAPI <code>logging</code>).</li>
+<li><strong>Tips Lain:</strong> Terapkan CORS jika perlu (FastAPI: middleware CORS), batasi ukuran input prompt, dan jalankan container/service dengan user non-root. Perhatikan pembaruan keamanan pada OS dan library.</li>
+</ul>
+<p><strong>Sumber:</strong> Referensi berasal dari dokumentasi resmi Hugging Face, Meta LLaMA 3, dan sumber terpercaya terkait deployment LLM<a href="https://huggingface.co/docs/transformers/en/installation#:~:text=Transformers%20works%20with%20PyTorch,2">[1]</a><a href="https://github.com/meta-llama/llama3#:~:text=To%20download%20the%20model%20weights,website%20and%20accept%20our%20License">[6]</a><a href="https://github.com/meta-llama/llama3#:~:text=,download%20and%20cache%20the%20weights">[7]</a><a href="https://huggingface.co/docs/text-generation-inference/en/index#:~:text=,inference%20using%20%2051%20Flash">[10]</a><a href="https://llama-cpp-python.readthedocs.io/en/latest/server/#:~:text=The%20server%20can%20be%20installed,by%20running%20the%20following%20command">[12]</a><a href="https://dev.to/udara_dananjaya/setting-up-a-fastapi-project-with-nginx-reverse-proxy-on-ubuntu-883#:~:text=server%20,your_domain_or_ip">[13]</a><a href="https://blog.nginx.org/blog/rate-limiting-nginx#:~:text=limit_req_zone%20%24binary_remote_addr%20zone%3Dmylimit%3A10m%20rate%3D10r%2Fs%3B">[17]</a><a href="https://fastapi.tiangolo.com/reference/security/#:~:text=header_scheme%20%3D%20APIKeyHeader%28name%3D%22x">[19]</a><a href="https://www.alexhyett.com/using-ngrok-to-test-local-sites-api/#:~:text=1,see%20an%20output%20like%20this">[15]</a><a href="https://sebastiangogola.me/securely-exposing-a-local-nginx-server-with-cloudflare-tunnel/#:~:text=%E2%9C%94%20No%20exposed%20IPs%20or,monitoring%20available%20via%20Cloudflare%20Dashboard">[16]</a>.</p>
+<p><a href="https://huggingface.co/docs/transformers/en/installation#:~:text=Transformers%20works%20with%20PyTorch,2">[1]</a> <a href="https://huggingface.co/docs/transformers/en/installation#:~:text=Create%20a%20virtual%20environment%20to,install%20Transformers%20in">[2]</a> <a href="https://huggingface.co/docs/transformers/en/installation#:~:text=For%20GPU%20acceleration%2C%20install%20the,appropriate%20CUDA%20drivers%20for%20PyTorch">[3]</a> Installation</p>
+<p><a href="https://huggingface.co/docs/transformers/en/installation">https://huggingface.co/docs/transformers/en/installation</a></p>
+<p><a href="https://huggingface.co/docs/text-generation-inference/en/installation#:~:text=To%20install%20and%20launch%20locally%2C,using%20conda">[4]</a> <a href="https://huggingface.co/docs/text-generation-inference/en/installation#:~:text=PROTOC_ZIP%3Dprotoc,f%20%24PROTOC_ZIP">[5]</a> <a href="https://huggingface.co/docs/text-generation-inference/en/installation#:~:text=Once%20installation%20is%20done%2C%20simply,run">[9]</a> Installation from source</p>
+<p><a href="https://huggingface.co/docs/text-generation-inference/en/installation">https://huggingface.co/docs/text-generation-inference/en/installation</a></p>
+<p><a href="https://github.com/meta-llama/llama3#:~:text=To%20download%20the%20model%20weights,website%20and%20accept%20our%20License">[6]</a> <a href="https://github.com/meta-llama/llama3#:~:text=,download%20and%20cache%20the%20weights">[7]</a> GitHub - meta-llama/llama3: The official Meta Llama 3 GitHub site</p>
+<p><a href="https://github.com/meta-llama/llama3">https://github.com/meta-llama/llama3</a></p>
+<p><a href="https://huggingface.co/docs/text-generation-inference/en/index#:~:text=Text%20Generation%20Inference%20,NeoX%2C%20and%20T5">[8]</a> <a href="https://huggingface.co/docs/text-generation-inference/en/index#:~:text=,inference%20using%20%2051%20Flash">[10]</a> Text Generation Inference</p>
+<p><a href="https://huggingface.co/docs/text-generation-inference/en/index">https://huggingface.co/docs/text-generation-inference/en/index</a></p>
+<p><a href="https://github.com/ggml-org/llama.cpp#:~:text=%23%20Text">[11]</a> GitHub - ggml-org/llama.cpp: LLM inference in C/C++</p>
+<p><a href="https://github.com/ggml-org/llama.cpp">https://github.com/ggml-org/llama.cpp</a></p>
+<p><a href="https://llama-cpp-python.readthedocs.io/en/latest/server/#:~:text=The%20server%20can%20be%20installed,by%20running%20the%20following%20command">[12]</a> OpenAI Compatible Web Server - llama-cpp-python</p>
+<p><a href="https://llama-cpp-python.readthedocs.io/en/latest/server/">https://llama-cpp-python.readthedocs.io/en/latest/server/</a></p>
+<p><a href="https://dev.to/udara_dananjaya/setting-up-a-fastapi-project-with-nginx-reverse-proxy-on-ubuntu-883#:~:text=server%20,your_domain_or_ip">[13]</a> <a href="https://dev.to/udara_dananjaya/setting-up-a-fastapi-project-with-nginx-reverse-proxy-on-ubuntu-883#:~:text=sudo%20apt%20install%20certbot%20python3">[14]</a> Setting Up a FastAPI Project with NGINX Reverse Proxy on Ubuntu - DEV Community</p>
+<p><a href="https://dev.to/udara_dananjaya/setting-up-a-fastapi-project-with-nginx-reverse-proxy-on-ubuntu-883">https://dev.to/udara_dananjaya/setting-up-a-fastapi-project-with-nginx-reverse-proxy-on-ubuntu-883</a></p>
+<p><a href="https://www.alexhyett.com/using-ngrok-to-test-local-sites-api/#:~:text=1,see%20an%20output%20like%20this">[15]</a> Using ngrok to test local websites and APIs | Alex Hyett</p>
+<p><a href="https://www.alexhyett.com/using-ngrok-to-test-local-sites-api/">https://www.alexhyett.com/using-ngrok-to-test-local-sites-api/</a></p>
+<p><a href="https://sebastiangogola.me/securely-exposing-a-local-nginx-server-with-cloudflare-tunnel/#:~:text=%E2%9C%94%20No%20exposed%20IPs%20or,monitoring%20available%20via%20Cloudflare%20Dashboard">[16]</a> Securely Exposing a Local Nginx Server with Cloudflare Tunnel - Gogola Nexus</p>
+<p><a href="https://sebastiangogola.me/securely-exposing-a-local-nginx-server-with-cloudflare-tunnel/">https://sebastiangogola.me/securely-exposing-a-local-nginx-server-with-cloudflare-tunnel/</a></p>
+<p><a href="https://blog.nginx.org/blog/rate-limiting-nginx#:~:text=limit_req_zone%20%24binary_remote_addr%20zone%3Dmylimit%3A10m%20rate%3D10r%2Fs%3B">[17]</a> <a href="https://blog.nginx.org/blog/rate-limiting-nginx#:~:text=location%20%2Flogin%2F%20,burst%3D20">[18]</a> Rate Limiting with NGINX – NGINX Community Blog</p>
+<p><a href="https://blog.nginx.org/blog/rate-limiting-nginx">https://blog.nginx.org/blog/rate-limiting-nginx</a></p>
+<p><a href="https://fastapi.tiangolo.com/reference/security/#:~:text=header_scheme%20%3D%20APIKeyHeader%28name%3D%22x">[19]</a> Security Tools - FastAPI</p>
+<p><a href="https://fastapi.tiangolo.com/reference/security/">https://fastapi.tiangolo.com/reference/security/</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Spesifikasi Teknologi">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Spesifikasi Teknologi
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Reka Cipta Solusi
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.498 6.186a3.02 3.02 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.02 3.02 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.02 3.02 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.02 3.02 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814M9.545 15.568V8.432L15.818 12z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer", "navigation.tabs", "navigation.tabs.sticky"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

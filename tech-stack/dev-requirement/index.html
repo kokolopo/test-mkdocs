@@ -1,0 +1,1598 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kokolopo.site/tech-stack/dev-requirement/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../cost-simulation/">
+      
+      
+      <link rel="icon" href="../../assets/rcs-logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>Development Requirement - Agentic AI Research Development</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRed+Hat+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"Red Hat Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#development-requirement" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Agentic AI Research Development" class="md-header__button md-logo" aria-label="Agentic AI Research Development" data-md-component="logo">
+      
+  <img src="../../assets/rcs-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Agentic AI Research Development
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Development Requirement
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-purple"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../introductions/" class="md-tabs__link">
+          
+  
+  
+  Introductions
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../overview/" class="md-tabs__link">
+          
+  
+  
+  Tech Stack
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../owasp/" class="md-tabs__link">
+          
+  
+  
+  OWASP
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../llm-self-hosting/" class="md-tabs__link">
+          
+  
+  
+  LLM Self Hosting
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Agentic AI Research Development" class="md-nav__button md-logo" aria-label="Agentic AI Research Development" data-md-component="logo">
+      
+  <img src="../../assets/rcs-logo.png" alt="logo">
+
+    </a>
+    Agentic AI Research Development
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Introductions
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Introductions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introductions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction of Agentic AI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introductions/ai-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    What is AI Agent?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LLMs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            LLMs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introductions/llms/llm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Large Language Models (LLMs)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introductions/llms/provider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Penyedia Large Language Models (LLMs) &amp; Platform Agregator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tech Stack
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tech Stack
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Framework
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Development Requirement
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Development Requirement
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#llms-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      LLMs Models
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LLMs Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#openrouter" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenRouter
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OpenRouter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tabel-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tabel model
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rekomendasi-pemilihan-strategi-biaya" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rekomendasi pemilihan &amp; strategi biaya
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#link-sumber-openrouter-silakan-klik-untuk-detail-angka-terbaru" class="md-nav__link">
+    <span class="md-ellipsis">
+      Link &amp; Sumber (OpenRouter — silakan klik untuk detail &amp; angka terbaru)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frameworks-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frameworks &amp; Tools
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cost-simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Simulasi Biaya
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../commercial-b2b/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Commercial B2B License
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    OWASP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            OWASP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../owasp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LLMs OWASP Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../owasp/prompt-injection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prompt Injection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../owasp/sensitive-information-disclosure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sensitive Information Disclosure
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../owasp/supply-chain-risks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Supply Chain Risks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../owasp/data-model-poisoning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data &amp; Model Poisoning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../owasp/improper-output-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Improper Output Handling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../owasp/excessive-agency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Excessive Agency
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../owasp/system-prompt-leakage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    System Prompt Leakage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../owasp/vector-embedding-weaknesses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vector &amp; Embedding Weaknesses
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../owasp/misinformation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Misinformation (Halusinasi &amp; Disinformasi)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../owasp/unbounded-consumption/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unbounded Consumption
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LLM Self Hosting
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            LLM Self Hosting
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm-self-hosting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Spesifikasi Teknologi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm-self-hosting/installation-on-premise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Instalasi LLaMA 3 On-Premise di Linux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#llms-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      LLMs Models
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LLMs Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#openrouter" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenRouter
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OpenRouter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tabel-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tabel model
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rekomendasi-pemilihan-strategi-biaya" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rekomendasi pemilihan &amp; strategi biaya
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#link-sumber-openrouter-silakan-klik-untuk-detail-angka-terbaru" class="md-nav__link">
+    <span class="md-ellipsis">
+      Link &amp; Sumber (OpenRouter — silakan klik untuk detail &amp; angka terbaru)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frameworks-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frameworks &amp; Tools
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="development-requirement"><strong>Development Requirement</strong></h1>
+<hr />
+<h2 id="llms-models"><strong>LLMs Models</strong></h2>
+<h3 id="openrouter"><strong>OpenRouter</strong></h3>
+<p>Di bawah ini tabel ringkas tentang <strong>model-model LLM yang tersedia via OpenRouter</strong> yang layak dipertimbangkan. Model-model berikut yang sering dipakai karena keseimbangan <strong>akurasi, konteks panjang, biaya, dan kebijakan penggunaan</strong>. Semua angka harga &amp; info diambil dari katalog OpenRouter (lihat sitasinya di akhir tabel) — periksa kembali sebelum produksi karena harga/penawaran bisa berubah.</p>
+<blockquote>
+<p>Catatan : kolom <em>Price</em> mengacu pada biaya yang ditampilkan OpenRouter (biasanya $ per 1M token input / output atau rate serupa). <em>Policy</em> merujuk pada lisensi &amp; batasan penggunaan umum (provider asli + OpenRouter gateway). Untuk penggunaan data sensitif, utamakan model yang bisa dijalankan on-prem / self-hosted atau pastikan kontrak/data processing agreement (DPA) dari provider.</p>
+</blockquote>
+<h4 id="tabel-model">Tabel model</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model (Provider)</th>
+<th style="text-align: left;">Kesesuaian (fit)</th>
+<th style="text-align: left;">Price</th>
+<th style="text-align: left;">Pros (kenapacocok)</th>
+<th style="text-align: left;">Cost considerations / Kekurangan</th>
+<th style="text-align: left;">Policy / Catatan kepatuhan</th>
+<th style="text-align: left;">Zero Data Retention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>gpt-4o-latest</strong> (OpenAI) (<a href="https://openrouter.ai/compare/openai/chatgpt-4o-latest?utm_source=chatgpt.com" title="Model Comparison">OpenRouter</a>)</td>
+<td style="text-align: left;">Sangat cocok untuk fitur penulisan natural, ringkasan panjang, penjelasan kebijakan, dialogs coaching.</td>
+<td style="text-align: left;"><strong>Contoh</strong>: Input $5 / 1M token, Output $15 / 1M token (lihat model comparator). Harga premium. (<a href="https://openrouter.ai/compare/openai/chatgpt-4o-latest?utm_source=chatgpt.com" title="Model Comparison">OpenRouter</a>)</td>
+<td style="text-align: left;">- Kualitas bahasa &amp; reasoning sangat tinggi.<br>- Mendukung modalitas lanjutan &amp; context panjang.</td>
+<td style="text-align: left;">- Biaya per-token relatif tinggi → hitung budget untuk volume (sesi performance reviews panjang).<br>- Latensi &amp; cost sensitif untuk real-time heavy usage.</td>
+<td style="text-align: left;">- Kebijakan OpenAI: data yang dikirim dapat dipakai untuk peningkatan model kecuali dinonaktifkan lewat enterprise / DPA; cek persyaratan kontrak. (<a href="https://openrouter.ai/docs/features/privacy-and-logging" title="OpenRouter">OpenRouter</a>)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>claude-3.7-sonnet / claude-family</strong> (Anthropic) (<a href="https://openrouter.ai/docs/features/privacy-and-logging" title="OpenRouter">OpenRouter</a>)</td>
+<td style="text-align: left;">Sangat cocok untuk long-form, safety, dan menolak permintaan berbahaya.</td>
+<td style="text-align: left;">Input $5 / 1M token, Output $15 / 1M token</td>
+<td style="text-align: left;">- Kuat pada safety/alignment → baik untuk kasus sensitif. <br>- Kinerja bagus pada instruksi &amp; konsistensi.</td>
+<td style="text-align: left;">- Masih lebih mahal daripada model open-source; butuh anggaran jika volume besar.</td>
+<td style="text-align: left;">- Anthropic menekankan safety &amp; harmlessness; periksa syarat pemrosesan data dan opsi enterprise untuk DPA. (<a href="https://openrouter.ai/docs/models?utm_source=chatgpt.com" title="Access 400+ AI Models Through One API">OpenRouter</a>)</td>
+<td style="text-align: left;"><img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Mistral Medium 3.1 / Mistral family</strong> (<a href="https://openrouter.ai/models?fmt=cards&amp;o=pricing-high-to-low&amp;supported_parameters=top_p&amp;utm_source=chatgpt.com" title="Models - Pricing: High to Low">OpenRouter</a>)</td>
+<td style="text-align: left;">Cocok untuk fitur sehari-hari: summarization, intent classification, templated responses (biaya/performansi seimbang).</td>
+<td style="text-align: left;">Input $0.4 / 1M token, Output $2 / 1M token</td>
+<td style="text-align: left;">- Rasio cost/performance sangat baik.<br>- Baik untuk scaling (banyak organisasi memilih Mistral untuk cost efficiency).</td>
+<td style="text-align: left;">- Kurang “cutting-edge” dibanding GPT4o/Claude pada beberapa tugas kompleks; perlu prompt engineering.</td>
+<td style="text-align: left;">- Biasanya provider model open (atau commercial) punya kebijakan berbeda; jika pakai via OpenRouter, patuhi terms provider masing-masing. (<a href="https://openrouter.ai/models?fmt=cards&amp;o=pricing-high-to-low&amp;supported_parameters=top_p&amp;utm_source=chatgpt.com" title="Models - Pricing: High to Low">OpenRouter</a>)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Llama 4 Maverick / Llama family (Meta/NVIDIA variants via OpenRouter)</strong> (<a href="https://openrouter.ai/models?utm_source=chatgpt.com" title="Models">OpenRouter</a>)</td>
+<td style="text-align: left;">Bagus bila ingin self-hosting / fine-tune (jika tersedia on-prem) — ideal untuk data sensitif karyawan.</td>
+<td style="text-align: left;">Input $0.15 / 1M token, Output $0.6 / 1M token; self-hosting = biaya infra (GPU) bukan token.</td>
+<td style="text-align: left;">- Dapat di-fine-tune / quantize.<br>- Kontrol penuh atas data (jika self-host).</td>
+<td style="text-align: left;">- Jika self-host: membutuhkan GPU (A100/H100) &amp; MLOps (CAPEX/OPEX). Via API: cek latency &amp; SLA.</td>
+<td style="text-align: left;">- Lisensi model (Meta/NVIDIA) wajib dicek; self-hosting memberi keuntungan kepatuhan data (DPA lebih mudah diterapkan). (<a href="https://openrouter.ai/models?utm_source=chatgpt.com" title="Models">OpenRouter</a>)</td>
+<td style="text-align: left;"><img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>DeepSeek V3.1 (free tier / low-cost models)</strong> (<a href="https://openrouter.ai/models/?q=free&amp;utm_source=chatgpt.com" title="Models: 'free'">OpenRouter</a>)</td>
+<td style="text-align: left;">Pilihan ekonomi untuk prototyping dan fitur non-misi-kritis (summaries, suggestions).</td>
+<td style="text-align: left;">Input $0.2 / 1M token, Output $0.8 / 1M token</td>
+<td style="text-align: left;">- Biaya rendah / tersedia free tier → cepat untuk MVP.<br>- Cukup untuk banyak tugas ringan.</td>
+<td style="text-align: left;">- Kualitas mungkin lebih rendah pada reasoning kompleks; periksa hallucination.</td>
+<td style="text-align: left;">- Model komunitas/third-party: periksa lisensi penggunaan komersial. Jika PII diolah, pastikan kebijakan penyimpanan/retensi. (<a href="https://openrouter.ai/models/?q=free&amp;utm_source=chatgpt.com" title="Models: 'free'">OpenRouter</a>)</td>
+<td style="text-align: left;"><img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Qwen / Deepseek / Lain-lain (mis. Qwen-3, DeepSeek R1T Chimera, etc.)</strong> (<a href="https://compare-openrouter-models.pages.dev/?utm_source=chatgpt.com" title="OpenRouter Model Price Comparison">compare-openrouter-models.pages.dev</a>)</td>
+<td style="text-align: left;">Alternatif cost-effective untuk tugas klasifikasi, ekstraksi entitas, pembuatan template (OKR).</td>
+<td style="text-align: left;">Harga sangat bervariasi — beberapa model sangat murah per 1M token di OpenRouter. Gunakan comparator spreadsheet OpenRouter. (<a href="https://compare-openrouter-models.pages.dev/?utm_source=chatgpt.com" title="OpenRouter Model Price Comparison">compare-openrouter-models.pages.dev</a>)</td>
+<td style="text-align: left;">- Pilihan beragam → bisa mix-and-match (OpenRouter routing) untuk menyeimbangkan cost &amp; quality.</td>
+<td style="text-align: left;">- Variansi kualitas antara model; butuh A/B testing.</td>
+<td style="text-align: left;">- Periksa terms setiap provider; beberapa model komunitas memiliki batasan komersial. (<a href="https://compare-openrouter-models.pages.dev/?utm_source=chatgpt.com" title="OpenRouter Model Price Comparison">compare-openrouter-models.pages.dev</a>)</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="rekomendasi-pemilihan-strategi-biaya">Rekomendasi pemilihan &amp; strategi biaya</h3>
+<ol>
+<li><strong>Mix-and-match (hybrid):</strong> gunakan model <em>premium</em> (GPT-4o/Claude) untuk tugas berisiko tinggi (final summaries, legal wording), dan model <em>mid/low-cost</em> (Mistral, DeepSeek) untuk tugas otomatis/volume tinggi (intent detection, quick summaries). OpenRouter memudahkan switching antar-model lewat satu API. (<a href="https://openrouter.ai/docs/features/privacy-and-logging" title="OpenRouter">OpenRouter</a>)</li>
+<li><strong>RAG + caching:</strong> untuk knowledge base perusahaan, gunakan RAG (ambil dokumen internal) sehingga model tidak perlu menghabiskan token pada knowledge static — menghemat biaya &amp; mengurangi hallucination. (Implementasi: embed + vector DB). (<a href="https://openrouter.ai/docs/models?utm_source=chatgpt.com" title="Access 400+ AI Models Through One API">OpenRouter</a>)</li>
+<li><strong>Self-host untuk data sensitif:</strong> jika harus memproses PII/penilaian karyawan yang sensitif, pertimbangkan model self-host (Llama family) untuk strict data control—tapi perhitungkan biaya GPU &amp; MLOps. (<a href="https://openrouter.ai/models?utm_source=chatgpt.com" title="Models">OpenRouter</a>)</li>
+<li><strong>Periksa policy &amp; DPA:</strong> selalu konfirmasi DPA/retention/penggunaan data dengan provider model (terutama OpenAI/Anthropic). OpenRouter bertindak sebagai gateway—tetapi policy utama tetap dari provider model yang mengeksekusi inference. (<a href="https://openrouter.ai/docs/features/privacy-and-logging" title="OpenRouter">OpenRouter</a>)</li>
+</ol>
+<hr />
+<h3 id="link-sumber-openrouter-silakan-klik-untuk-detail-angka-terbaru">Link &amp; Sumber (OpenRouter — silakan klik untuk detail &amp; angka terbaru)</h3>
+<ul>
+<li>Halaman model &amp; browsing OpenRouter: <strong>OpenRouter Models</strong>. (<a href="https://openrouter.ai/docs/models?utm_source=chatgpt.com" title="Access 400+ AI Models Through One API">OpenRouter</a>)</li>
+<li>Perbandingan model &amp; pricing contoh (model comparator halaman): <strong>Model Comparison / pricing examples</strong>. (<a href="https://openrouter.ai/compare/openai/chatgpt-4o-latest?utm_source=chatgpt.com" title="Model Comparison">OpenRouter</a>)</li>
+<li>Halaman utama OpenRouter (overview gateway, routing, policy reminder): <strong>openrouter.ai</strong>. (<a href="https://openrouter.ai/docs/features/privacy-and-logging" title="OpenRouter">OpenRouter</a>)</li>
+<li>Contoh listing model free / low-cost (DeepSeek etc.): <strong>OpenRouter models free</strong>. (<a href="https://openrouter.ai/models/?q=free&amp;utm_source=chatgpt.com" title="Models: 'free'">OpenRouter</a>)</li>
+</ul>
+<hr />
+<h2 id="frameworks-tools"><strong>Frameworks &amp; Tools</strong></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Lapisan / Komponen</strong></th>
+<th style="text-align: left;"><strong>Teknologi / Framework</strong></th>
+<th style="text-align: left;"><strong>Fungsi Utama</strong></th>
+<th style="text-align: left;"><strong>Alternatif / Integrasi</strong></th>
+<th style="text-align: left;"><strong>Kelebihan (Pros)</strong></th>
+<th style="text-align: left;"><strong>Catatan / Cost / Kapan Digunakan</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>1. Orkestrasi AI Agent</strong></td>
+<td style="text-align: left;"><strong>LangGraph</strong></td>
+<td style="text-align: left;">Mengatur <em>workflow agent</em> berbasis graph (node-state-edge). Mendukung alur multi-langkah, kondisi bercabang, dan kolaborasi multi-agent.</td>
+<td style="text-align: left;">CrewAI, AutoGen, Semantic Kernel</td>
+<td style="text-align: left;">+ Visual &amp; modular<br>+ Mendukung loop &amp; persistence<br>+ Integrasi langsung dengan LangChain</td>
+<td style="text-align: left;">Gratis (OSS). Ideal untuk AI Agent kompleks seperti HR performance management dengan multi-sesi dan analisis data dinamis.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2. LLM Core Orchestration</strong></td>
+<td style="text-align: left;"><strong>LangChain Core</strong></td>
+<td style="text-align: left;">Abstraksi modular untuk prompt, model, memory, tools, dan chain. Menjadi inti logika AI agent.</td>
+<td style="text-align: left;">LlamaIndex, Haystack</td>
+<td style="text-align: left;">+ Sangat fleksibel &amp; ekosistem besar<br>+ Integrasi native ke LiteLLM, LangGraph, LangSmith</td>
+<td style="text-align: left;">Gratis (OSS). Sebagai <em>engine utama</em> agent reasoning &amp; tool orchestration.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>3. LLM Gateway / Model Router</strong></td>
+<td style="text-align: left;"><strong>LiteLLM</strong></td>
+<td style="text-align: left;">Layer proxy untuk <em>unify API</em> dari berbagai LLM (OpenAI, Claude, Gemini, Mistral, Ollama, dll). Dapat melakukan load-balancing, logging, dan cost control.</td>
+<td style="text-align: left;">OpenRouter, Helicone, LMQL</td>
+<td style="text-align: left;">+ Bisa ganti model tanpa ubah kode (API OpenAI-compatible)<br>+ Logging, rate limit, &amp; cost tracking<br>+ Integrasi langsung dengan LangChain &amp; LangServe</td>
+<td style="text-align: left;">OSS (gratis) dengan opsi enterprise. Gunakan untuk kontrol biaya &amp; multi-model routing. Contoh: GPT-4 untuk reasoning, Mistral untuk summarization.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>4. Observability / Evaluasi / Logging</strong></td>
+<td style="text-align: left;"><strong>LangSmith</strong></td>
+<td style="text-align: left;">Monitoring, tracing, evaluasi, dan debugging interaksi LLM.</td>
+<td style="text-align: left;">LangFuse, LangWatch, PromptLayer</td>
+<td style="text-align: left;">+ UI visual untuk tracing chain/agent<br>+ Evaluator otomatis berbasis LLM-as-judge</td>
+<td style="text-align: left;">Freemium. Sangat berguna untuk audit hasil feedback &amp; error tracing agent HR.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>5. Deployment &amp; Serving Layer</strong></td>
+<td style="text-align: left;"><strong>LangServe (FastAPI-based)</strong></td>
+<td style="text-align: left;">Menyediakan endpoint API siap pakai untuk chain/agent dengan dokumentasi otomatis &amp; streaming.</td>
+<td style="text-align: left;">BentoML, FastAPI Native</td>
+<td style="text-align: left;">+ Auto OpenAPI docs<br>+ Integrasi LangSmith &amp; LiteLLM<br>+ Streaming realtime</td>
+<td style="text-align: left;">OSS. Gunakan jika ingin expose agent ke frontend HR atau internal API.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>6. Vector Database (RAG Layer)</strong></td>
+<td style="text-align: left;"><strong>Qdrant</strong>, <strong>Chroma</strong>, <strong>Pinecone</strong>, <strong>FAISS</strong>, <strong>Weaviate</strong></td>
+<td style="text-align: left;">Menyimpan embedding dokumen HR &amp; KPI untuk pencarian semantik.</td>
+<td style="text-align: left;">Milvus, Vespa</td>
+<td style="text-align: left;">+ Query cepat &amp; integrasi langsung ke LangChain</td>
+<td style="text-align: left;">Pinecone (freemium, SaaS), Qdrant (OSS). Pilih sesuai kebutuhan hosting.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>7. Relational / Document Database</strong></td>
+<td style="text-align: left;">PostgreSQL / MongoDB</td>
+<td style="text-align: left;">Menyimpan data user, KPI, hasil evaluasi, dan riwayat feedback.</td>
+<td style="text-align: left;">Supabase (Postgres SaaS), Firestore</td>
+<td style="text-align: left;">+ Stabil &amp; mudah integrasi<br>+ Banyak ORM Python</td>
+<td style="text-align: left;">OSS. Gunakan PostgreSQL untuk struktur kuat; MongoDB untuk fleksibilitas data JSON.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>8. Cache / Session / Message Queue</strong></td>
+<td style="text-align: left;"><strong>Redis</strong></td>
+<td style="text-align: left;">Menyimpan session context, cache hasil model, dan event asinkron antar agent.</td>
+<td style="text-align: left;">Memcached, RabbitMQ, Kafka</td>
+<td style="text-align: left;">+ Cepat &amp; efisien<br>+ Dukungan pub/sub untuk state LangGraph</td>
+<td style="text-align: left;">OSS. Wajib untuk multi-session agent agar context tidak hilang.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>9. Embedding Generator</strong></td>
+<td style="text-align: left;">OpenAI Embeddings / SentenceTransformers / LiteLLM embedding router</td>
+<td style="text-align: left;">Mengubah teks → vektor numerik untuk pencarian semantik.</td>
+<td style="text-align: left;">HuggingFace Embeddings, Cohere</td>
+<td style="text-align: left;">+ Akurasi tinggi<br>+ Bisa dikelola lewat LiteLLM untuk unify API</td>
+<td style="text-align: left;">Cost kecil ($0.0001/1K token). Bisa lokal via SentenceTransformers untuk privasi data HR.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>10. Backend Framework (Python)</strong></td>
+<td style="text-align: left;"><strong>FastAPI</strong></td>
+<td style="text-align: left;">API server utama, user management, dan orchestrator AI agent.</td>
+<td style="text-align: left;">Flask, Django REST</td>
+<td style="text-align: left;">+ Asynchronous &amp; performa tinggi<br>+ Native integrasi ke LangServe</td>
+<td style="text-align: left;">OSS. Ideal untuk production-grade AI API backend.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>11. Inter-Agent Protocol / Standard Context</strong></td>
+<td style="text-align: left;"><strong>MCP (Model Context Protocol)</strong></td>
+<td style="text-align: left;">Protokol standar untuk pertukaran konteks antar agent, tool, IDE, dan app eksternal.</td>
+<td style="text-align: left;">OpenAI MCP SDK, GitHub Copilot MCP</td>
+<td style="text-align: left;">+ Standardisasi komunikasi antar agent &amp; alat eksternal<br>+ Plug-and-play antar sistem AI</td>
+<td style="text-align: left;">OSS (open standard). Berguna untuk integrasi dengan sistem HRIS, CRM, atau Copilot internal.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Framework">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Framework
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../cost-simulation/" class="md-footer__link md-footer__link--next" aria-label="Next: Simulasi Biaya">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Simulasi Biaya
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Reka Cipta Solusi
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.498 6.186a3.02 3.02 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.02 3.02 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.02 3.02 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.02 3.02 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814M9.545 15.568V8.432L15.818 12z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer", "navigation.tabs", "navigation.tabs.sticky"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
