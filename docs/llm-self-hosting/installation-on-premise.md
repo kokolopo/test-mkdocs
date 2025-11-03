@@ -56,7 +56,7 @@ Setelah model siap, gunakan framework inferensi untuk menjalankannya. Beberapa p
     pipe = pipeline("text-generation", model="meta-llama/Meta-Llama-3-8B-Instruct")  
     output = pipe("Halo, bagaimana kabarmu?")
     ```
-    Ini menggunakan Llama 3 instruksi untuk teks generatif. Sama seperti contoh dokumentasi HF[\[7\]](https://github.com/meta-llama/llama3#:~:text=,download%20and%20cache%20the%20weights), pastikan ```device\_map="auto"``` agar model besar terdistribusi ke GPU jika tersedia.
+    Ini menggunakan Llama 3 instruksi untuk teks generatif. Sama seperti contoh dokumentasi HF[\[7\]](https://github.com/meta-llama/llama3#:~:text=,download%20and%20cache%20the%20weights), pastikan ```device_map="auto"``` agar model besar terdistribusi ke GPU jika tersedia.
 *   **Text Generation Inference (TGI):** TGI adalah toolkit Hugging Face untuk inference berperforma tinggi dengan REST API siap pakai[\[8\]](https://huggingface.co/docs/text-generation-inference/en/index#:~:text=Text%20Generation%20Inference%20,NeoX%2C%20and%20T5). Setelah instalasi (```pip install text-generation-inference```), jalankan server TGI dengan model Llama 3 instruksi:
     ```bash
     text-generation-launch --model-id meta-llama/Meta-Llama-3-8B-Instruct --tensor-parallel 1 --listen-port 8000
